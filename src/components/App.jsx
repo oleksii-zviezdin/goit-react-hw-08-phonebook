@@ -24,7 +24,6 @@ import { useEffect, lazy, Suspense } from 'react';
 import { refreshUser } from 'redux/auth/operation';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
@@ -37,13 +36,6 @@ export const App = () => {
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
-
-  const setAuthHeader = token => {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-  };
-  console.log(
-    setAuthHeader(`dfsdkmasdmdgsdlmdKSmkfKDlLSFOSKksosk214drtb45vk349vk3`)
-  );
 
   const items = useSelector(selectItems);
   const isError = useSelector(selectError);
@@ -85,23 +77,23 @@ export const App = () => {
         {/* <UserMenu /> */}
         {/* <FormTitle>Phonebook</FormTitle> */}
         {/* {isLoggedIn && <ContactForm />} */}
-        {items?.length !== 0 && !isError && <Filter />}
+        {/* {items?.length !== 0 && !isError && <Filter />} */}
         {/* {!isLoggedIn && <Notification message={'Please register or login'} />}
       {items?.length === 0 && isLoggedIn && (
         <Notification
           message={'This is where your added contacts will be displayed'}
         />
       )} */}
-        {isError && <Error>{isError}</Error>}
+        {/* {isError && <Error>{isError}</Error>} */}
         {isLoading && <Loader />}
         {/* {!isLoggedIn && <RegisterForm />}
       {<LoginForm />} */}
-        {items?.length !== 0 && !isError && (
+        {/* {items?.length !== 0 && !isError && (
           <>
             <ContnactsTitle>Contacts</ContnactsTitle>
             <ContactList contacts={items} />
           </>
-        )}
+        )} */}
         <ToastContainer position="top-center" autoClose={3000} theme="dark" />
       </Container>
     </Suspense>

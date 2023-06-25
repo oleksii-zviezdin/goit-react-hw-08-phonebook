@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { initialStateContants } from './initialStateContants';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import fetchContact, { addContact, deleteContact } from './operation';
+import { fetchContact, addContact, deleteContact } from './operation';
 
 const persistConfig = {
   key: 'contacts',
