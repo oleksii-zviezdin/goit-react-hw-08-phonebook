@@ -24,7 +24,7 @@ export const ContactForm = () => {
 
   const handleAddContactSubmit = e => {
     e.preventDefault();
-    const isIncludeContactNumber = contacts.find(
+    const isIncludeContactNumber = contacts?.find(
       contact => contact.number === number
     );
 
