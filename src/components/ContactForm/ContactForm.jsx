@@ -24,15 +24,9 @@ export const ContactForm = () => {
 
   const handleAddContactSubmit = e => {
     e.preventDefault();
-
-    const isIncludeContactName = contacts.find(
-      contact => contact.name === name
-    );
     const isIncludeContactNumber = contacts.find(
       contact => contact.number === number
     );
-    console.log(`is include Name ${isIncludeContactName}`);
-    console.log(`is include Number ${isIncludeContactNumber}`);
 
     if (isIncludeContactNumber) {
       return toast.warning(`"${number}" is already in another contact name`);

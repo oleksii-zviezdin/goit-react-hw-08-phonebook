@@ -12,7 +12,6 @@ import { Loader } from '../index';
 export const ContactList = () => {
   const contacts = useSelector(selectItems);
   const isLoading = useSelector(selectIsLoading);
-  console.log(isLoading);
   const filter = useSelector(selectFilter);
 
   const filteredContacts = getFilteredContacts(filter, contacts);

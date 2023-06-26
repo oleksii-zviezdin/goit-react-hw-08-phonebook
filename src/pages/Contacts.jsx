@@ -24,7 +24,7 @@ export default function Contacts() {
     <>
       {isLoading && <Loader />}
       <FormTitle>Your Phonebook</FormTitle>
-      {isError && <ContactForm />}
+      <ContactForm />
       {isError && contacts.length > 1 && <Filter />}
       {isError && <ContactList />}
     </>
