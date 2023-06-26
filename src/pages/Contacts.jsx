@@ -29,7 +29,7 @@ export default function Contacts() {
       {/* {isError && <ContactList />} */}
       <ContactForm />
       {contacts.length > 1 && <Filter />}
-      {<ContactList />}
+      <ContactList />
     </>
   );
 }
