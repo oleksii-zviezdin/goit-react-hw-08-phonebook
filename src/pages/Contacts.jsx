@@ -18,14 +18,14 @@ export default function Contacts() {
 
   useEffect(() => {
     dispatch(fetchContact());
-  }, [dispatch]);
+  }, [dispatch, contacts]);
 
   return (
     <>
       {isLoading && <Loader />}
       <FormTitle>Your Phonebook</FormTitle>
       {/* {isError && <ContactForm />} */}
-      {/* {isError && contacts.length > 1 && <Filter />} */}
+      {/* {isError && contacts?.length > 1 && <Filter />} */}
       {/* {isError && <ContactList />} */}
       <ContactForm />
       {contacts?.length > 1 && <Filter />}
