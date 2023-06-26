@@ -28,7 +28,7 @@ export default function Contacts() {
       {/* {isError && contacts.length > 1 && <Filter />} */}
       {/* {isError && <ContactList />} */}
       <ContactForm />
-      {contacts.length > 1 && <Filter />}
+      {contacts?.length > 1 && <Filter />}
       <ContactList />
     </>
   );
