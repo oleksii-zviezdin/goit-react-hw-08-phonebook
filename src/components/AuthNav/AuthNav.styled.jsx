@@ -1,9 +1,19 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
+export const LinkContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+`;
+
 export const Link = styled(NavLink)`
-  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 32px;
+  padding: 0px 12px 0px 12px;
 
   text-decoration: none;
   border-radius: 8px;

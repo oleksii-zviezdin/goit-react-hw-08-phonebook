@@ -4,6 +4,8 @@ import {
   FormRegister,
   LableFormRegister,
   RegisterButton,
+  Input,
+  ButtonContainer,
 } from './RegisterForm.styled';
 
 export const RegisterForm = () => {
@@ -28,17 +30,19 @@ export const RegisterForm = () => {
     <FormRegister onSubmit={handleSubmit} autoComplete="off">
       <LableFormRegister>
         Username
-        <input type="text" name="name" />
+        <Input type="text" name="name" />
       </LableFormRegister>
       <LableFormRegister>
         Email
-        <input type="email" name="email" />
+        <Input type="email" name="email" />
       </LableFormRegister>
       <LableFormRegister>
         Password
-        <input type="password" name="password" />
+        <Input type="password" name="password" />
       </LableFormRegister>
-      <RegisterButton type="submit">Register</RegisterButton>
+      <ButtonContainer>
+        <RegisterButton type="submit">Register</RegisterButton>
+      </ButtonContainer>
     </FormRegister>
   );
 };

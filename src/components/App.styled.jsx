@@ -33,3 +33,8 @@ export const Error = styled.div`
   text-align: center;
   font-size: 24px;
 `;
+export const HomeContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;

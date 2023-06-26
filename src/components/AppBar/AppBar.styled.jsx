@@ -15,12 +15,13 @@ export const ContainerAppBar = styled.header`
 export const AppBarCSS = styled.div`
   position: relative;
   display: flex;
-  justify-content: space-around;
+  gap: 10px;
+  justify-content: space-between;
   align-items: center;
-  padding-right: 24px;
-  padding-left: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 8px;
   background-color: rgb(18 8 42);
   box-shadow: 0 0 10px 5px #001aff;

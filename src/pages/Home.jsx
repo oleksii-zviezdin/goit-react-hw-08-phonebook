@@ -1,19 +1,19 @@
 import { Notification } from 'components';
 import { useSelector } from 'react-redux';
-import { selectIsLoggedIn } from 'redux/auth/selector';
-import { selectItems } from 'redux/contacts/selector';
+import { selectIsLoggedIn, selectUser } from 'redux/auth/selector';
+import { HomeContainer } from 'components/App.styled';
 
 export default function Home() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const items = useSelector(selectItems);
+  const { name } = useSelector(selectUser);
   return (
-    <div>
+    <HomeContainer>
       {!isLoggedIn && <Notification message={'Please register or login'} />}
-      {items?.length === 0 && isLoggedIn && (
+      {isLoggedIn && (
         <Notification
-          message={'This is where your added contacts will be displayed'}
+          message={`Welcome ${name}! Here you can add your favorite contacts. Go to the "contacts" tab and add your contacts`}
         />
       )}
-    </div>
+    </HomeContainer>
   );
 }

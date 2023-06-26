@@ -31,11 +31,11 @@ export const ContactForm = () => {
     const isIncludeContactNumber = contacts.find(
       contact => contact.number === number
     );
+    console.log(`is include Name ${isIncludeContactName}`);
+    console.log(`is include Number ${isIncludeContactNumber}`);
 
-    if (isIncludeContactName) {
-      return toast.warning(`"${name}" is already in contacts`);
-    } else if (isIncludeContactNumber) {
-      return toast.warning(`"${number}" is already in contacts`);
+    if (isIncludeContactNumber) {
+      return toast.warning(`"${number}" is already in another contact name`);
     } else {
       const contact = { name, number };
       dispatch(addContact(contact));
