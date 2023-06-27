@@ -7,38 +7,77 @@ import {
   Input,
   ButtonContainer,
 } from './RegisterForm.styled';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 export const RegisterForm = () => {
+  const [name, setName] = useState('');
+  const [email, setMail] = useState('');
+  const [password, setPassword] = useState('');
+
   const dispatch = useDispatch();
+
+  const handleChange = e => {
+    const { name, value } = e.currentTarget;
+    if (name === 'name') {
+      setName(value);
+    } else if (name === 'email') {
+      setMail(value);
+    } else if (name === 'password') {
+      setPassword(value);
+    }
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const { name, email, password } = form;
-    if (!name.value || !email.value || !password.value) return;
+    if (!name || !email || !password)
+      return toast.info(`All form fields must be filled out`);
     dispatch(
       register({
-        name: name.value,
-        email: email.value,
-        password: password.value,
+        name: name,
+        email: email,
+        password: password,
       })
     );
-    form.reset();
+    setName('');
+    setMail('');
+    setPassword('');
   };
 
   return (
     <FormRegister onSubmit={handleSubmit} autoComplete="off">
       <LableFormRegister>
-        Username
-        <Input type="text" name="name" />
+        Name
+        <Input
+          autoComplete="current-name"
+          placeholder="Type your name..."
+          onChange={handleChange}
+          type="text"
+          name="name"
+          value={name}
+        />
       </LableFormRegister>
       <LableFormRegister>
         Email
-        <Input type="email" name="email" />
+        <Input
+          autoComplete="current-email"
+          placeholder="Type your email..."
+          onChange={handleChange}
+          type="email"
+          name="email"
+          value={email}
+        />
       </LableFormRegister>
       <LableFormRegister>
         Password
-        <Input type="password" name="password" />
+        <Input
+          autoComplete="current-password"
+          placeholder="Type your password..."
+          onChange={handleChange}
+          type="password"
+          name="password"
+          value={password}
+        />
       </LableFormRegister>
       <ButtonContainer>
         <RegisterButton type="submit">Register</RegisterButton>

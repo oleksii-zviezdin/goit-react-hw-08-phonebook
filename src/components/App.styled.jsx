@@ -25,7 +25,7 @@ export const ContnactsTitle = styled.div`
   margin-bottom: 12px;
 `;
 
-export const Error = styled.div`
+export const Error = styled.p`
   margin-top: 24px;
   color: #ff62b693;
   text-shadow: 0 0 10px #ff62b6d3;
