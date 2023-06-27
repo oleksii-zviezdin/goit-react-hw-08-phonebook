@@ -65,5 +65,5 @@ export const contactsSlice = createSlice({
 
 export const contactsReducer = contactsSlice.reducer;
 
-export const persistedReducer = persistReducer(persistConfig, contactsReducer);
+export const persistedReducerContacts = persistReducer(persistConfig, contactsReducer);
 export const { filterContacts } = contactsSlice.actions;

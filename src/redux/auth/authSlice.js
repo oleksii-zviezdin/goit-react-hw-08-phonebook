@@ -44,4 +44,4 @@ export const authSlice = createSlice({
 });
 export const authReducer = authSlice.reducer;
 
-export const persistedReducer = persistReducer(persistConfig, authReducer);
+export const persistedReducerAuth = persistReducer(persistConfig, authReducer);

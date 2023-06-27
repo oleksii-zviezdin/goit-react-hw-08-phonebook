@@ -1,7 +1,7 @@
-import { authReducer } from './auth/authSlice';
-import { persistedReducer } from './contacts/contactsSlice';
+import { persistedReducerAuth } from './auth/authSlice';
+import { persistedReducerContacts } from './contacts/contactsSlice';
 
 export const reducer = {
-  contacts: persistedReducer,
-  auth: authReducer,
+  contacts: persistedReducerContacts,
+  auth: persistedReducerAuth,
 };
