@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 export const LinkContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
 `;
 
 export const Link = styled(NavLink)`

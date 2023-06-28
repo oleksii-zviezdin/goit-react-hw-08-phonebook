@@ -9,7 +9,7 @@ export const Container = styled.div`
   padding: 20px 0;
 `;
 
-export const FormTitle = styled.div`
+export const FormTitle = styled.h1`
   text-transform: uppercase;
   font-weight: 600;
   text-align: center;

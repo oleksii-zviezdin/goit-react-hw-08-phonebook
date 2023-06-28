@@ -35,7 +35,7 @@ export const Form = styled.form`
     filter: blur(5px);
     -webkit-filter: blur(5px);
     background-size: 400%;
-    animation: glowing-button-85 25s linear infinite;
+    animation: glowing-button-85 35s linear infinite;
     transition: opacity 0.3s ease-in-out;
   }
 
@@ -62,6 +62,7 @@ export const Span = styled.span`
   font-weight: 600;
 `;
 export const Input = styled.input`
+  border-radius: 4px;
   border: none;
   height: 24px;
   background-color: #6279ff;

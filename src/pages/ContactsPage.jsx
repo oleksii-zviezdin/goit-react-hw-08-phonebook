@@ -23,7 +23,7 @@ export default function Contacts() {
   return (
     <>
       {isLoading && <Loader />}
-      <FormTitle>Your Phonebook</FormTitle>
+      <FormTitle>Add contact</FormTitle>
       {!isError && <Error>{isError}</Error>}
       {/* {isError && <ContactForm />} */}
       {/* {isError && contacts?.length > 1 && <Filter />} */}
