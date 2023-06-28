@@ -9,7 +9,7 @@ export const fetchContact = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await axios.get('/contacts');
-      return await data;
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -31,9 +31,9 @@ export const addContact = createAsyncThunk(
         progress: undefined,
         theme: 'dark',
       });
-      return await data;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -53,7 +53,7 @@ export const deleteContact = createAsyncThunk(
         progress: undefined,
         theme: 'dark',
       });
-      return await data;
+      return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }

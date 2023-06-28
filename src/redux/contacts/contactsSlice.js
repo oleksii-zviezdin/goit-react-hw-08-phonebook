@@ -49,7 +49,7 @@ export const contactsSlice = createSlice({
     [deleteContact.fulfilled](state, { payload }) {
       state.contacts.isLoading = false;
       state.contacts.error = null;
-      const contacts = state.contacts.items.filter(
+      const contacts = state.contacts.items?.filter(
         contact => contact.id !== payload.id
       );
       state.contacts.items = contacts;
@@ -65,5 +65,8 @@ export const contactsSlice = createSlice({
 
 export const contactsReducer = contactsSlice.reducer;
 
-export const persistedReducerContacts = persistReducer(persistConfig, contactsReducer);
+export const persistedReducerContacts = persistReducer(
+  persistConfig,
+  contactsReducer
+);
 export const { filterContacts } = contactsSlice.actions;
